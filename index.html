@@ -52,10 +52,16 @@
     border-bottom: 1px solid var(--border);
   }
   .nav-logo {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--accent);
-    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .nav-logo img {
+    height: 70px;
+    width: auto;
+    display: block;
+    object-fit: contain;
   }
   .nav-links { display: flex; gap: 2rem; }
   .nav-links a {
@@ -481,16 +487,26 @@
 
   @media (max-width: 520px) {
     .hero-stats { grid-template-columns: 1fr; }
+
     h1 { font-size: clamp(2.4rem, 15vw, 4rem); }
-    .nav-logo { display: none; }
-    nav { justify-content: center; }
+
+    .nav-logo img { height: 42px; }
+
+    nav {
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .nav-links { gap: 0.75rem; }
+
+    .nav-links a { font-size: 10px; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">GK.portfolio</div>
+  <div class="nav-logo"><img src="assets/logo.png" alt="Gurojaspreet Kaur"></div>
   <div class="nav-links">
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
